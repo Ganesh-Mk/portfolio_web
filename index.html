@@ -216,6 +216,7 @@
     /* =========================== Skill section ===========================  */
 
 
+    
     .skills {
         margin-top: 6rem;
         display: grid;
@@ -223,8 +224,12 @@
     }
 
     .skillHead {
-        font-size: 4rem;
         margin-bottom: 6rem;
+        font-family: montserrat;
+        font-size: 3.4rem;
+        color: #000000d4;
+        font-weight: bold;
+
     }
 
     .skillContainer {
@@ -281,19 +286,23 @@
 
 
     .skill img {
-        width: 10rem;
+        width: 9rem;
     }
 
     .js img {
-        width: 8.5rem;
+        width: 8rem;
+    }
+    .react img {
+        width: 7.5rem;
     }
 
     .nodeJs img {
-        width: 13rem;
+        width: 8rem;
     }
 
     .sql img {
-        width: 14.5rem;
+        width: 8rem;
+
     }
 
 
@@ -386,7 +395,7 @@
 
     .projects h1 {
         font-size: 3.4rem;
-        margin: 6rem 0;
+        margin: 10rem 0 6rem 0;
         color: #000000d4;
         font-family: montserrat;
     }
@@ -819,17 +828,17 @@
         </div>
     </nav>
     <div class="container">
-        <section class="home" data-aos="fade-up">
-            <div class="name" data-aos="fade-up">
+        <section class="home">
+            <div class="name">
                 <h1>HI! &nbsp;I &nbsp;AM</h1>
                 <h1>GANESH &nbsp;MK</h1>
-                <button>WEB DEVELOPER</button>
+                <button onclick="changeText()">WEB DEVELOPER</button>
             </div>
             <div class="aboutContainer">
                 <div>
                     <div class="myImage"></div>
                 </div>
-                <div class="about" data-aos="fade-up">
+                <div class="about">
                     <div class="aboutInfo">
                         <h2>ABOUT &nbsp; ME</h2>
                         <p>"I enjoy working on creative and challenging projects that allow me to apply my technical
@@ -975,6 +984,18 @@
         });
     </script>
     <script>
+        let changeAccess = 0;
+        function changeText(){
+            
+            if(changeAccess == 0){
+                document.querySelector('button').innerText = 'Not yet actually😅'
+                changeAccess = 1;
+            }
+            else{
+                document.querySelector('button').innerText = 'WEB DEVELOPER'
+                changeAccess = 0;
+            }
+        }
         let skillBoxs = document.querySelectorAll(".skill");
         skillBoxs.forEach((e) => {
             e.addEventListener("mouseleave", () => {
